@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla JS Todo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="todo-container">
+        <h1>Todo List</h1>
+        
+        <div class="week-container">
+            <div class="week-header">
+                <button id="prev-week">&lt;</button>
+                <h2 id="current-month"></h2>
+                <button id="next-week">&gt;</button>
+            </div>
+            <div id="week-days" class="week-days"></div>
+        </div>
+        
+        <div class="input-group">
+            <input type="text" id="todo-input" placeholder="새로운 할 일을 입력하세요">
+            <button id="add-btn">추가</button>
+        </div>
+        
+        <p id="alert-message" class="hidden">할 일을 입력해주세요!</p>
+
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">전체</button>
+            <button class="filter-btn" data-filter="active">진행 중</button>
+            <button class="filter-btn" data-filter="completed">완료</button>
+        </div>
+        
+        <ul id="todo-list"></ul>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
