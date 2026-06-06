@@ -1,0 +1,285 @@
+/* 기본 여백 초기화 및 폰트 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 배경색 및 화면 중앙 정렬 */
+body {
+    background-color: #f4f5f7;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    color: #333;
+}
+
+/* 앱 메인 컨테이너 스타일 */
+.todo-container {
+    background-color: white;
+    width: 100%;
+    max-width: 480px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+/* 메인 타이틀 포인트 컬러 적용 */
+h1 {
+    text-align: center;
+    color: #672be0;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+/* 주간 뷰 전체 컨테이너 배치 */
+.week-container {
+    margin-bottom: 20px;
+    background-color: #faf9ff;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #eae6f5;
+}
+
+/* 주간 헤더 영역 정렬 */
+.week-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 0 5px;
+}
+
+/* 주차 이동 버튼 스타일 */
+.week-header button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #672be0;
+    font-weight: bold;
+    padding: 0 5px;
+    transition: transform 0.1s;
+}
+
+.week-header button:hover {
+    transform: scale(1.2);
+}
+
+/* 현재 표시 연월 스타일 */
+#current-month {
+    font-size: 0.95rem;
+    color: #444;
+    font-weight: 600;
+}
+
+/* 요일 가로 나열을 위한 플렉스 박스 설정 */
+.week-days {
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+}
+
+/* 개별 날짜 카드 디자인 */
+.day-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 2px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s;
+    background-color: white;
+    border: 1px solid #f0eef7;
+}
+
+.day-card:hover {
+    background-color: #f5f0ff;
+}
+
+/* 요일 텍스트 스타일 */
+.day-name {
+    font-size: 0.7rem;
+    color: #888;
+    margin-bottom: 2px;
+}
+
+/* 일자 숫자 스타일 */
+.day-number {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 하단 할 일 개수 배지 스타일 */
+.day-count {
+    font-size: 0.65rem;
+    color: #dfdfdf;
+    margin-top: 3px;
+}
+
+/* 할 일이 존재하는 날짜의 배지 강조 */
+.day-count.has-count {
+    color: #672be0;
+    font-weight: bold;
+}
+
+/* 오늘 날짜 테두리 강조 표시 */
+.day-card.today {
+    border: 1px dashed #672be0;
+    background-color: #fdfbff;
+}
+
+.day-card.today .day-number {
+    color: #672be0;
+}
+
+/* 현재 선택된 날짜 활성화 스타일 */
+.day-card.selected {
+    background-color: #672be0;
+    border-color: #672be0;
+}
+
+.day-card.selected .day-name,
+.day-card.selected .day-number,
+.day-card.selected .day-count {
+    color: white !important;
+}
+
+/* 할 일 입력 영역 배치 */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#todo-input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+#todo-input:focus {
+    border-color: #672be0;
+}
+
+/* 추가 버튼 디자인 */
+#add-btn {
+    background-color: #672be0;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+#add-btn:hover {
+    background-color: #5122b5;
+}
+
+/* 숨김 처리를 위한 유틸리티 클래스 */
+.hidden {
+    display: none;
+}
+
+/* 경고 메시지 스타일 */
+#alert-message {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+    padding-left: 5px;
+}
+
+/* 필터 탭 영역 스타일 */
+.filter-container {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 8px;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: #888;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    color: #672be0;
+    background-color: #f5f0ff;
+}
+
+/* 선택된 필터 탭 활성화 표시 */
+.filter-btn.active {
+    color: white;
+    background-color: #672be0;
+}
+
+#todo-list {
+    list-style: none;
+    min-height: 120px;
+}
+
+/* 개별 Todo 아이템 레이아웃 */
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.todo-item:last-child {
+    border-bottom: none;
+}
+
+.todo-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+/* 완료된 항목 취소선 및 색상 변경 */
+.completed .todo-text {
+    text-decoration: line-through;
+    color: #a0a0a0;
+}
+
+/* 수정 및 삭제 버튼 그룹 */
+.btn-group {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-group button {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.edit-btn {
+    background-color: #f0f0f0;
+    color: #555;
+}
+
+.delete-btn {
+    background-color: #ffeaea;
+    color: #e74c3c;
+}
